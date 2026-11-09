@@ -1,24 +1,65 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>شجرة آل تَوّاه</title>
-<style>
-body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#f6f1e6;color:#1f4d45;font-family:"Amiri","Traditional Arabic",serif;text-align:center}
-main{max-width:420px;padding:32px 24px}
-h1{font-size:2.4rem;margin:0 0 12px}
-p{font-size:1.15rem;line-height:1.9;color:#4d5b57;margin:0 0 28px}
-a{display:inline-block;background:#1f4d45;color:#fff;text-decoration:none;padding:14px 40px;border-radius:12px;font-size:1.2rem}
-small{display:block;margin-top:28px;color:#8a948f}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>أشجار الأنساب</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #f6f1e6; color: #21342c; font: 1rem/1.8 Tahoma, sans-serif; }
+    main { max-width: 55rem; margin: auto; padding: clamp(2rem, 8vw, 6rem) 1.25rem; }
+    header { border-top: 4px solid #a98039; padding-block: 1.25rem; }
+    h1 { margin: 0; font-size: clamp(2rem, 6vw, 3.4rem); }
+    p { margin: .4rem 0; }
+    nav {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+      gap: 1rem;
+    }
+    a { color: #255844; }
+    a:focus-visible { outline: 3px solid #795717; outline-offset: 4px; }
+    .choice {
+      display: block;
+      padding: 1.5rem;
+      border: 1px solid #d4c5a8;
+      border-radius: .8rem;
+      background: #fffcf5;
+      text-decoration: none;
+    }
+    .choice:hover { border-color: #255844; background: #fff; }
+    .choice strong { display: block; font-size: 1.35rem; }
+    .choice span { display: block; color: #48574f; }
+    .back { display: inline-block; margin-bottom: 1rem; }
+    #bani-hajer { display: none; }
+    #bani-hajer:target { display: block; }
+    #bani-hajer:target + #home { display: none; }
+  </style>
 </head>
 <body>
-<main>
-<h1>شجرة آل تَوّاه</h1>
-<p>موقع عائلي خاص. الدخول لمن دُعي من أفراد العائلة أو قُبل طلبه.</p>
-<a href="https://script.google.com/macros/s/AKfycbwxRv7OGHTpQhJD5hU1m0NkJVpEPqMVuguEmar5QBLfNUYqfFzqOxITv2mcCYUaESA/exec">الدخول إلى الشجرة</a>
-<small>لا تُعرض بيانات الأنساب في هذه الصفحة.</small>
-</main>
+  <main>
+    <section id="bani-hajer" aria-labelledby="bani-title">
+      <a class="back" href="#home">العودة إلى الرئيسية</a>
+      <header>
+        <h1 id="bani-title">شجرة بني هاجر</h1>
+        <p>ستُعرض هنا الشجرة العامة بعد إضافة بياناتها.</p>
+      </header>
+    </section>
+    <section id="home" aria-labelledby="home-title">
+      <header>
+        <h1 id="home-title">أشجار الأنساب</h1>
+        <p>اختر الشجرة التي تريد عرضها.</p>
+      </header>
+      <nav aria-label="اختيار الشجرة">
+        <a class="choice" href="#bani-hajer">
+          <strong>شجرة بني هاجر</strong>
+          <span>الشجرة العامة للقبيلة</span>
+        </a>
+        <a class="choice" href="https://script.google.com/macros/s/AKfycbwxRv7OGHTpQhJD5hU1m0NkJVpEPqMVuguEmar5QBLfNUYqfFzqOxITv2mcCYUaESA/exec?tree=al-tawah">
+          <strong>شجرة آل تواه</strong>
+          <span>الشجرة العائلية الخاصة</span>
+        </a>
+      </nav>
+    </section>
+  </main>
 </body>
 </html>
